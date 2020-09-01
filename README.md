@@ -22,3 +22,5 @@
 
   + En el gáfico a continuación se pueden apreciar como se comportan las diferentes soluciones para el estudio de una ecuación diferencial armónica, entre ellas, se obtuvo la solución real, esta calculada previamente, la solución odeint de la libreria scipy y el método Euler.
   +  Se puede observar que las soluciones de Euler con N=10 y N=100, al igual que la solución odeint, son las que más se acercan a la solución real, sin embargo no llegan a ser iguales los resultados. Por otra parte, la solución euler con N=1, se aleja de la solución real, de manera que es la menos precisa.
+
+![ Entrega 4](https://user-images.githubusercontent.com/69213519/91795284-4246ce80-ebeb-11ea-84cd-84f077f5e68e.png)
