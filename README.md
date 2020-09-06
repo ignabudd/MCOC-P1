@@ -27,3 +27,11 @@
 
 ## Entrega 5 - Mejoras al modelo y estudio de convergencia
 
+![Posicion](https://user-images.githubusercontent.com/69213519/92318138-376eae00-efde-11ea-9da8-c0433d544bb2.png)
+
+![Distancia pos  real y predicha(N=1)](https://user-images.githubusercontent.com/69213519/92318136-363d8100-efde-11ea-9e8a-f844bb9a7d67.png)
+
+![Distancia pos  real y predicha(N=240)](https://user-images.githubusercontent.com/69213519/92318137-36d61780-efde-11ea-8c66-b347bc93a103.png)
+
+
+
