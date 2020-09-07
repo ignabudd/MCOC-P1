@@ -123,7 +123,9 @@ plt.ylabel("Deriva (Km)")
 plt.savefig("P4 - Distancia pos. real y predicha con j2j3.png", DPI=1200)
 plt.show()
 
-
+tf = perf_counter()
+dtc = tf - t0
+print (f"El codigo se demora {dtc} s en correr.")
 
 
 
