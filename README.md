@@ -34,16 +34,27 @@
   
 ![P2 - Distancia pos  euler y odeint (N=1)](https://user-images.githubusercontent.com/69213519/92385387-31fd8a80-f0e8-11ea-9ee7-6c655904d73d.png)
 
+   + Como se puede ver en el grafico anterior, la deriva entre las soluciones odeint y eulerint (N=1) es de 19285 km, se puede decir que eulerint con 1 subdivison no es eficiente ni preciso. Mientras que la deriva entre la posición real y la predicha es de 1300 km, como se puede observar en el archivo adjunto "P3 - Distancia pos. real y predicha.png", es decir es mucho menor.
+   + Odeint se demora el obtener los resultados 0.29 s, mientras que eulerint 0.98 s, demostrando que odeint es mejor y más eficiente.
+
   + 3. ¿Cuantas subdivisiones hay que usar para que la predicción con eulerint al final del tiempo esté en menos de un 1% de error? Grafique la deriva en el tiempo. Comente con    respecto del tiempo de ejecución de eulerint ahora.
   
 ![P3 - Distancia pos  euler y odeint (N=240)](https://user-images.githubusercontent.com/69213519/92385389-32962100-f0e8-11ea-9275-c5d8e76880e7.png)
+
+   +  En el grafico anterior se observa con un Nsub = 240, una deriva de 4586 km, es decir un 23% de error, para esta ejecución se demoraba 230 s, por temas de tiempo no alcanzaba a probar para Nsub mayores, pero por deducción Nsub debiese ser mayor a 1000, para obtener un error menor al 1%, y en mi comptador eso debiese demorarse aproximadamente una hora. 
 
   + 4. Implemente las correcciones J2 y J3. Repita los gráficos de arriba para su caso particular. ¿Cuánta deriva incurre al agregar las correcciones J2 y J3? ¿Cuanto se demora     su código en correr?
 
 ![P4 - Posicion XYZ (j2)](https://user-images.githubusercontent.com/69213519/92385393-332eb780-f0e8-11ea-8d3c-56f5e935aca7.png)
 ![P4 - Distancia pos  real y predicha con j2](https://user-images.githubusercontent.com/69213519/92385511-696c3700-f0e8-11ea-8193-058e7c99f1d7.png)
 
+  + En los gráficos anteriores se ve la implementación de J2, en donde se observa una deriva entre la real y la predicha mucho mejor, de 0.56 km (siendo la original 1300 km), en donde se puede ver que el primer gráfico de posición están casi perfectamente alineados. 
+
 ![P4 - Posicion XYZ (j2j3) ](https://user-images.githubusercontent.com/69213519/92385394-33c74e00-f0e8-11ea-8f3f-b00739912dea.png)
 ![P4 - Distancia pos  real y predicha con j2j3](https://user-images.githubusercontent.com/69213519/92385521-6e30eb00-f0e8-11ea-876f-27bfe9419d7c.png)
+
+  + En los gráficos anteriores se ve la implementación de J2 y J3, en donde se observa una deriva entre la real y la predicha no tan notoria, de 0.5 km (siendo la original 1300 km), en donde se puede ver que el primer gráfico de posición están casi perfectamente alineados.
+  
+  + El codigo se demora en correr 7 s, incluyendo l parte de los gráficos. 
 
 
