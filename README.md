@@ -34,7 +34,7 @@
   
 ![P2 - Distancia pos  euler y odeint (N=1)](https://user-images.githubusercontent.com/69213519/92385387-31fd8a80-f0e8-11ea-9ee7-6c655904d73d.png)
 
-   + Como se puede ver en el grafico anterior, la deriva entre las soluciones odeint y eulerint (N=1) es de 19285 km, se puede decir que eulerint con 1 subdivison no es eficiente ni preciso. Mientras que la deriva entre la posición real y la predicha es de 1300 km, como se puede observar en el archivo adjunto "P3 - Distancia pos. real y predicha.png", es decir es mucho menor.
+   + Como se puede ver en el grafico anterior, la deriva entre las soluciones odeint y eulerint (N=1) es de 19285 km, se puede decir que eulerint con 1 subdivison no es eficiente ni preciso. Mientras que la deriva entre la posición real y la predicha es de 1300 km, como se puede observar en el archivo adjunto "P2 - Distancia pos. real y predicha.png", es decir es mucho menor.
    + Odeint se demora el obtener los resultados 0.29 s, mientras que eulerint 0.98 s, demostrando que odeint es mejor y más eficiente.
 
   + ## P3. ¿Cuantas subdivisiones hay que usar para que la predicción con eulerint al final del tiempo esté en menos de un 1% de error? Grafique la deriva en el tiempo. Comente con    respecto del tiempo de ejecución de eulerint ahora.
@@ -55,6 +55,6 @@
 
   + En los gráficos anteriores se ve la implementación de J2 y J3, en donde se observa una deriva entre la real y la predicha no tan notoria, de 0.5 km (siendo la original 1300 km), en donde se puede ver que el primer gráfico de posición están casi perfectamente alineados.
   
-  + El codigo se demora en correr 7 s, incluyendo l parte de los gráficos. 
+  + El codigo se demora en correr 7 s, incluyendo la parte de los gráficos. 
 
 
