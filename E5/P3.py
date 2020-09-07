@@ -56,23 +56,19 @@ sol_eule2 = sol_euler2[:, 0:3]
 
 
 Nt = len(t)
-Ndim = len(np.array(z0))
-z = np.zeros((Nt,Ndim))
-z2 = np.zeros((Nt,Ndim))
+deriva_eo = np.zeros(Nt)
+deriva_eo2 = np.zeros(Nt) 
 
-for i in range(1,Nt):
-    
-    deriva_ode = np.sqrt(sol_ode[i][0]**2 + sol_ode[i][1]**2 + sol_ode[i][2]**2 )
-    deriva_eul = np.sqrt(sol_eule[i][0]**2 + sol_eule[i][1]**2 + sol_eule[i][2]**2)
-    deriva_eul2 = np.sqrt(sol_eule2[i][0]**2 + sol_eule2[i][1]**2 + sol_eule2[i][2]**2)
-    z[i,:] = deriva_eul - deriva_ode
-    z2[i,:] = deriva_eul2 - deriva_ode
-    
-der_ode_eule = round(z[-1][-1]/1000,2)    
-der_ode_eule2 = round(z2[-1][-1]/1000,2)     
+for i in range(Nt):
+    deriva_eo[i] = np.sqrt(np.dot((sol[i,:3] - sol_euler[i,:3]), (sol[i,:3] - sol_euler[i,:3])))
+    deriva_eo2[i] = np.sqrt(np.dot((sol[i,:3] - sol_euler2[i,:3]), (sol[i,:3] - sol_euler2[i,:3])))
 
-print (f"La deriva entre eulerint (N =1) y odeint es: {der_ode_eule} km")
-print (f"La deriva entre eulerint (N = 240) y odeint es: {der_ode_eule2} km")
+deriva_eo_max = round(deriva_eo[-1]/1000,2)
+deriva_eo2_max = round(deriva_eo2[-1]/1000,2)
+    
+
+print (f"La deriva entre eulerint (N =1) y odeint es: {deriva_eo_max} km")
+print (f"La deriva entre eulerint (N = 240) y odeint es: {deriva_eo2_max} km")
 
 print (f"La solucion odeint se demora: {dt} segundos")
 print (f"La solucion eulerint, Nsubd = 1, se demora: {dt1} segundos")   
@@ -80,8 +76,8 @@ print (f"La solucion eulerint, Nsubd = 240, se demora: {dt2} segundos")
 
 
 plt.figure(figsize=(19.2,10.8))
-plt.plot(t/horas,z2[:]/1000)
-plt.title(f"Distancia entre posicion euler y odeint: {der_ode_eule2} km")
+plt.plot(t/horas,deriva_eo2/1000)
+plt.title(f"Distancia entre posicion euler y odeint: {deriva_eo2_max} km")
 plt.xlabel("Tiempo (horas)")
 plt.ylabel("Deriva (Km)")
 plt.savefig("P3 - Distancia pos. euler y odeint (N=240).png", DPI=1200)
