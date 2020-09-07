@@ -26,12 +26,24 @@
 ![ Entrega 4](https://user-images.githubusercontent.com/69213519/91795284-4246ce80-ebeb-11ea-84cd-84f077f5e68e.png)
 
 ## Entrega 5 - Mejoras al modelo y estudio de convergencia
+  + 1. Grafíque, como arriba, la posición (x,y,z) en el tiempo del vector de estado de Sentinel 1A/B que le tocó. Para esto, descargue y utilice la función leer_eof.
+  
+![P1 - Posicion XYZ](https://user-images.githubusercontent.com/69213519/92385385-30cc5d80-f0e8-11ea-9c3d-8d51ac8a5252.png)
 
-![Posicion](https://user-images.githubusercontent.com/69213519/92318138-376eae00-efde-11ea-9da8-c0433d544bb2.png)
+  + 2. Usando la condición inicial (primer OSV) de su archivo, compare la solución entre odeint y eulerint. Use Nsubdiviciones=1. Grafíque la deriva en el tiempo como arriba       ¿Cuánto deriva eulerint de odeint en este caso al final del tiempo? (Esta pregunta solo compara algoritmos, no se usa más que la condición inicial del archivo EOF). ¿Cuanto se   demora odeint y eulerint respectivamente en producir los resultados?
+  
+![P2 - Distancia pos  euler y odeint (N=1)](https://user-images.githubusercontent.com/69213519/92385387-31fd8a80-f0e8-11ea-9ee7-6c655904d73d.png)
 
-![Distancia pos  real y predicha(N=1)](https://user-images.githubusercontent.com/69213519/92318136-363d8100-efde-11ea-9e8a-f844bb9a7d67.png)
+  + 3. ¿Cuantas subdivisiones hay que usar para que la predicción con eulerint al final del tiempo esté en menos de un 1% de error? Grafique la deriva en el tiempo. Comente con    respecto del tiempo de ejecución de eulerint ahora.
+  
+![P3 - Distancia pos  euler y odeint (N=240)](https://user-images.githubusercontent.com/69213519/92385389-32962100-f0e8-11ea-9275-c5d8e76880e7.png)
 
-![Distancia pos  real y predicha(N=240)](https://user-images.githubusercontent.com/69213519/92318137-36d61780-efde-11ea-8c66-b347bc93a103.png)
+  + 4. Implemente las correcciones J2 y J3. Repita los gráficos de arriba para su caso particular. ¿Cuánta deriva incurre al agregar las correcciones J2 y J3? ¿Cuanto se demora     su código en correr?
 
+![P4 - Posicion XYZ (j2)](https://user-images.githubusercontent.com/69213519/92385393-332eb780-f0e8-11ea-8d3c-56f5e935aca7.png)
+![P4 - Distancia pos  real y predicha con j2](https://user-images.githubusercontent.com/69213519/92385511-696c3700-f0e8-11ea-8193-058e7c99f1d7.png)
+
+![P4 - Posicion XYZ (j2j3) ](https://user-images.githubusercontent.com/69213519/92385394-33c74e00-f0e8-11ea-8f3f-b00739912dea.png)
+![P4 - Distancia pos  real y predicha con j2j3](https://user-images.githubusercontent.com/69213519/92385521-6e30eb00-f0e8-11ea-876f-27bfe9419d7c.png)
 
 
