@@ -58,3 +58,6 @@
   + El codigo se demora en correr 7 s, incluyendo la parte de los gráficos. 
 
 ## Entrega 7 - Final
+
+  + Se implementaron las correcciones J4 y J5 al código, sin embargo no se vio ninguna mejora, pues la deriva ya era bastante baja, de 0.55 km, la cual se mantuvo en ese valor.
+  
